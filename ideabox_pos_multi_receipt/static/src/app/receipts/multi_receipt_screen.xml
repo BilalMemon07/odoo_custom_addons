@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ideabox_pos_multi_receipt.MultiReceiptScreen" owl="1">
+        <div class="receipt-screen screen">
+            <div class="screen-content">
+                <div class="top-content d-flex align-items-center py-3 border-bottom text-center">
+                    <div class="top-content-center flex-grow-1" style="margin-right:90px">
+                        <h1>Pos Multiple Receipt</h1>
+                    </div>
+                    <span class="button next btn btn-lg btn-secondary mx-2" t-on-click="back">
+                        <span>New Order</span>
+                        <span> </span>
+                        <i class="fa fa-angle-double-right"/>
+                    </span>
+                </div>
+                <div class="centered-content">
+
+                    <div class="button btn btn-lg btn-secondary w-100 py-3" t-on-click="printReceipt">
+                        <i class="fa fa-print" t-ref="order-print-receipt-button"/>
+                        <span> </span>
+                        <span>Print</span>
+                    </div>
+                    <div style="text-align:center; !important">
+                        <MultiPosReceipt data="env.services.pos.get_order().export_for_printing()" order="env.services.pos.get_order()" receipt = "env.services.pos.get_order().export_for_printing()" orderlines="env.services.pos.get_order().orderlines" paymentlines="env.services.pos.get_order().export_for_printing().paymentlines"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

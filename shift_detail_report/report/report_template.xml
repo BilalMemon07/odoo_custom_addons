@@ -1,0 +1,95 @@
+<odoo>
+    <template id="shift_detail_reports">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page" style="font-size:12px">
+                    <div class="row ">
+                        <div class="col-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE FROM</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_from'])" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE TO</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_to'])" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <h3
+                                    style="background-color: #f2f2f2;color: #00509e; text-align: center; padding: 5px;">Shift Details Report</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table width="100%" style="border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr style="background-color: #00509e; color: white;">
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Date</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Day</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Start</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>End</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Status</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody t-if="data">
+                            <t t-set="resource" t-value="''" />
+                            <t t-foreach="data" t-as="value">
+                                <tr t-if="resource != value['employee_name']">
+                                    <t t-set="resource" t-value="value['employee_name']" />
+                                    <td style="background-color: black; color: white; text-align:center;font-size:15px" colspan="5"> <span t-esc="resource"/> </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['date']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['day']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['start_time']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['end_time']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['status']" />
+                                    </td>
+                                </tr>
+                            </t>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </t>
+
+        </t>
+    </template>
+</odoo>

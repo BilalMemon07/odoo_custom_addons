@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Custom form view for individual contacts -->
+        <record id="view_individual_contact_form" model="ir.ui.view">
+            <field name="name">res.partner.individual.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Change name field placeholder -->
+                <xpath expr="//field[@id='individual']" position="attributes">
+                    <attribute name="placeholder">Customer Full Name</attribute>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <!-- Add our custom fields to the form -->
+                <xpath expr="//form/sheet/group[1]" position="attributes">
+                    <attribute name="invisible">company_type != 'company'</attribute>
+                </xpath>    
+                <xpath expr="//notebook" position="attributes">
+                    <attribute name="invisible">company_type != 'company'</attribute>
+                </xpath>    
+
+                <xpath expr="//form/sheet/group[1]" position="after" >    
+                    <group string="Personal Details" invisible = "company_type == 'company'">
+                        <group>
+                            <field name="phone" required="1"/>
+                            <field name="birthdate"/>
+                            <field name="gender"/>
+                            <field name="married"/>
+                            <field name="age_limit"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="area_id"/>
+                            <field name="block" domain="[('area_id', '=', area_id)]"/>
+                            <field name="referred_by"/>
+                            <field name="subscribe_to_alert"/>
+                            <field name="add_to_blacklist"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" placeholder="Add any additional notes here..." nolabel="1"/>
+                    </group>
+                </xpath>
+                
+            </field>
+        </record>
+    </data>
+</odoo>

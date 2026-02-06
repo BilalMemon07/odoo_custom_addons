@@ -10,7 +10,6 @@
     "description": """""",
     "depends": ["point_of_sale",'hr'],
     "data": [
-        'views/pos_config.xml',
         'views/hr_employee_views.xml',
     ],
     'assets': {

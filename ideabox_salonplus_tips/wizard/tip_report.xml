@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_tip_report_wizard" model="ir.ui.view">
+        <field name="name">tip.report.wizard</field>
+        <field name="model">tip.report</field>
+        <field name="arch" type="xml">
+            <form string="Tips Report">
+                <group>
+                    <group>
+                    <field name="date_from"/>
+                    <field name="billing_amount"/>        
+                    <field name="client_name"/>        
+                </group>
+                <group>
+                    <field name="date_to"/>        
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Print" type="object" name="print_report" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tip_report_wizard" model="ir.actions.act_window">
+        <field name="name">Tips Report</field>
+        <field name="res_model">tip.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_tip_report_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_tip_report" name="Tips Report" parent="point_of_sale.menu_point_rep"
+            action="action_tip_report_wizard" />
+</odoo>

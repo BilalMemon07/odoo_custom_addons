@@ -1,5 +1,6 @@
 /** @odoo-module */
 // Muhammad Bilal
+import { PosOrder } from "@point_of_sale/app/models/pos_order";
 import { Orderline } from "@point_of_sale/app/generic_components/orderline/orderline";
 import { patch } from "@web/core/utils/patch";
 
@@ -10,9 +11,8 @@ patch(Orderline, {
             ...Orderline.props.line,
             shape: {
                 ...Orderline.props.line.shape,
-                resource_name: { type: String, optional: true }, 
-                resource_id:{ type: Number, optional: true },
-              
+                resource_name: { type: String, optional: true },
+                resource_id: { type: Number, optional: true }
             },
         },
     },

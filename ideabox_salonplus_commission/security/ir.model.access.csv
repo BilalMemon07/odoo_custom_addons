@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_resource_commission,access_resource_commission,model_resource_commission,,1,1,1,1
+access_commission_disbursement,access_commission_disbursement,model_commission_disbursement,,1,1,1,1
+access_commission_report,access_commission_report,model_commission_report,,1,1,1,1

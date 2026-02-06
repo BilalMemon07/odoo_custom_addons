@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+
+        <!-- Calendar View -->
+        <record id="view_resource_services_calendar" model="ir.ui.view">
+            <field name="name">resource.services.calendar</field>
+            <field name="model">resource.services</field>
+            <field name="arch" type="xml">
+                <calendar string="Resource Bookings"
+                          date_start="date_from" date_stop="date_to"
+                          color="resource_id">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="resource_id" filters="1" invisible="1"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_resource_services_list" model="ir.ui.view">
+            <field name="name">resource.services.list</field>
+            <field name="model">resource.services</field>
+            <field name="arch" type="xml">
+                <list string="Resource Bookings">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date_from" optional="hide"/>
+                    <field name="date_to" optional="hide"/>
+                    <field name="duration"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_resource_services_form" model="ir.ui.view">
+            <field name="name">resource.services.form</field>
+            <field name="model">resource.services</field>
+            <field name="arch" type="xml">
+                <form string="Resource Booking">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="product_id" readonly="True"/>
+                                <field name="resource_id" readonly="True"/>
+                                <field name="partner_id" readonly="True"/>
+                            </group>
+                            <group>
+                                <field name="date_from" readonly="True"/>
+                                <field name="date_to" readonly="True"/>
+                                <field name="duration" readonly="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_resource_service" model="ir.actions.act_window">
+            <field name="name">Resource And Services</field>
+            <field name="res_model">resource.services</field>
+            <field name="view_mode">calendar,list,form</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="appointment.menu_appointment_schedule_resource_booking"
+                  parent="appointment.menu_appointment_schedule_resources"
+                  action="action_resource_service"
+                  name="Resources Bookings"/>
+    </data>
+</odoo>

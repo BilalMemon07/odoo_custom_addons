@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_commission_disbursement_wizard" model="ir.ui.view">
+        <field name="name">commission.disbursement.wizard</field>
+        <field name="model">commission.disbursement</field>
+        <field name="arch" type="xml">
+            <form string="Commission disbursement">
+                <group>
+                    <group>
+                        <field name="employee_id" />
+                        <field name="date_from"/>
+                        <field name="date_to"/>        
+                    </group>
+                    <group>
+                        <field name="amount_paid"/>
+                        <field name="remaining_amount"/>
+                        <field name="amount_total"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Confirm" type="object" name="confirm" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_commission_disbursement_wizard" model="ir.actions.act_window">
+        <field name="name">Commission Disbursement</field>
+        <field name="res_model">commission.disbursement</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_commission_disbursement_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_commission_disbursement" name="Commission Disbursement" parent="point_of_sale.menu_point_config_product"
+            action="action_commission_disbursement_wizard" />
+</odoo>

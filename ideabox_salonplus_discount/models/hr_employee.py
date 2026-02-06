@@ -5,10 +5,10 @@ class HrEmployee(models.Model):
     """Add field into hr employee"""
     _inherit = 'hr.employee'
 
-    limited_discount_percentage = fields.Integer(string="Discount Limit Percentage",
+    limited_discount_percentage = fields.Integer(string="Global Discount Limit Percentage",
                                       help="Provide discount limit to each "
                                            "employee")
-    limited_discount_amount = fields.Integer(string="Discount Limit Amount",
+    limited_discount_amount = fields.Integer(string="Global Discount Limit Amount",
                                       help="Provide discount limit to each "
                                            "employee")
     

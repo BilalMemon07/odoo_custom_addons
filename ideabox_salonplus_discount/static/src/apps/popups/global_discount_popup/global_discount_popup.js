@@ -32,7 +32,6 @@ export class GlobalDiscountPopup extends Component {
 
     confirm() {
         const { discount_type, discount_value } = this.state;
-
         this.props.getPayload({
             discount_type,
             discount_value,

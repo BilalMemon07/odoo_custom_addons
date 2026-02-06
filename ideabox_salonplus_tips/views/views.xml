@@ -1,0 +1,65 @@
+<odoo>
+    <record id="view_pos_order_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_stock_picking']" position="after">
+                <button name="action_view_tips"
+                    icon="fa-thumbs-o-up"
+                    type="object"
+                    class="oe_highlight"
+                    string="Tips"
+                    invisible="tip_count == 0">
+                    <field widget="statinfo" name="tip_count" string="Tips" />
+                </button>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_tip_form" model="ir.ui.view">
+        <field name="name">pos.tip.form</field>
+        <field name="model">pos.tip</field>
+        <field name="arch" type="xml">
+            <form string="Tips">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="amount" />
+                        <field name="employee_id" />
+                        <field name="pos_order_id" />
+                        <field name="date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <data>
+        <record id="view_pos_tip_tree" model="ir.ui.view">
+            <field name="name">pos.tip.tree</field>
+            <field name="model">pos.tip</field>
+            <field name="arch" type="xml">
+                <list string="Tips">
+                    <field name="name" />
+                    <field name="amount" />
+                    <field name="employee_id" />
+                    <field name="pos_order_id" />
+                    <field name="date" />
+                </list>
+            </field>
+        </record>
+        <record id="action_pos_tips" model="ir.actions.act_window">
+            <field name="name">Tips</field>
+            <field name="res_model">pos.tip</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Tip record.
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_pos_tips" name="Tips" parent="point_of_sale.menu_point_config_product"
+            action="action_pos_tips" />
+    </data>
+</odoo>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ideabox_salonplus_tips.TextInputPopup">
+        <Dialog title="props.title">
+    <!-- Toggle Buttons -->
+    <div class="d-flex flex-wrap gap-2 mb-3">
+        <t t-foreach="props.buttons" t-as="button" t-key="button_index">
+            <button t-on-click="() => this.buttonClick(button)" type="button"
+                t-attf-class="btn btn-sm rounded-pill {{button.isSelected ? 'btn-primary' : 'btn-outline-secondary'}}">
+                <t t-esc="button.label"/>
+            </button>
+        </t>
+    </div>
+
+    <!-- Tip Table -->
+    <div class="card shadow-sm rounded-3 mb-4">
+        <div class="card-body p-0">
+            <table class="table table-hover align-middle m-0">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-start">Employee</th>
+                        <th class="text-center" style="width: 120px;">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-if="state.resources.length">
+                        <t t-foreach="state.resources" t-as="res" t-key="res.id">
+                            <tr>
+                                <td class="ps-3">
+                                    <span class="fw-semibold">
+                                        <t t-esc="res.name"/>
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <input type="number" t-model="res.tip_amount"
+                                           class="form-control form-control-sm text-center rounded-pill"
+                                           placeholder="0.00"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <tr>
+                            <td colspan="2" class="text-center text-muted py-3">
+                                <i class="fa fa-user-slash me-1"></i>No employees found
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Payment Method Selector -->
+    <div class="mb-4">
+        <label for="payment_methods" class="form-label fw-bold">Payment Method</label>
+        <select id="payment_methods" name="payment_methods" t-model="state.payment_method"
+                class="form-select form-select-lg rounded-pill shadow-sm">
+            <option value="" disabled="True">Select payment method</option>
+            <option value="Cash">💵 Cash</option>
+            <option value="Card">💳 Card</option>
+            <option value="Online">🌐 Online</option>
+        </select>
+    </div>
+
+    <!-- Footer Buttons -->
+    <t t-set-slot="footer">
+        <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-outline-secondary rounded-pill px-4" t-on-click="close">
+                Discard
+            </button>
+            <button class="btn btn-primary rounded-pill px-4" t-on-click="confirm">
+                Apply
+            </button>
+        </div>
+    </t>
+</Dialog>
+
+
+    </t>
+</templates>

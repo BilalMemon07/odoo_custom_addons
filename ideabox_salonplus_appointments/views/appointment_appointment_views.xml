@@ -1,0 +1,125 @@
+<odoo>
+    <data>
+
+        <!-- Form View -->
+        <record id="view_appointment_form" model="ir.ui.view">
+            <field name="name">appointment.form</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Appointment">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"
+                                invisible="state != 'draft'"/>
+                        <button name="action_no_show" string="No Show" type="object" class="btn-warning text-white"
+                                invisible="state != 'confirmed'"/>
+                        <button name="action_cancel" string="Cancel" type="object" class="btn-danger"
+                                invisible="state in ['done','cancelled']"/>
+                        <button name="action_draft" string="Set to Draft" type="object" class="btn-secondary"
+                                invisible="state != 'cancelled'"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,confirmed,done,cancelled"
+                               statusbar_colors="{'draft':'blue','confirmed':'orange','done':'green','cancelled':'red'}"
+                               class="oe_inline"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="appointment_ref"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="partner_id" readonly="state != 'draft'"/>
+                                <field name="client_notes" readonly="state != 'draft'"/>
+                                <field name="last_services" />
+                                <field name="last_served_by" />
+                            </group>
+                            <group>
+                                <!-- <field name="appointment_type_id" readonly="state != 'draft'"/> -->
+                                <field name="date" readonly="state != 'draft'"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Services">
+                                <field name="resource_line_ids" nolabel="1" editable="bottom" readonly="state == 'done'">
+                                    <list editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="service_duration"/>
+                                        <field name="resource_id"/>
+                                        <field name="time_from"/>
+                                        <field name="time_to"/>
+                                        <field name="duration"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                       <chatter/>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_appointment_tree" model="ir.ui.view">
+            <field name="name">appointment.tree</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <list string="Appointments">
+                    <field name="name"/>
+                    <field name="services_str"/>
+                    <field name="resources_str" optional="hide"/>
+                    <field name="date"/>
+                    <field name="appointment_from"/>
+                    <field name="appointment_to"/>
+                    <field name="state" optional="hide"/>
+                </list>
+            </field>
+        </record>
+        
+        <!-- Calendar View -->
+        <record id="view_appointment_calendar" model="ir.ui.view">
+            <field name="name">appointment.calendar</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <calendar string="Appointments" color="partner_id" quick_create="false" date_start="appointment_from" date_stop="appointment_to">
+                    <field name="name"/>
+                    <field name="partner_id" filters="1" invisible="1"/>
+                    <field name="client_notes" />
+                    <field name="services_str"/>
+                    <field name="resources_str" />
+                    <field name="appointment_duration"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_appointment" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">appointment.appointment</field>
+            <field name="view_mode">calendar,list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new appointment.
+                </p>
+            </field>
+        </record>
+
+        <record id="appointment.calendar_event_action_view_bookings_resources" model="ir.actions.act_window">
+            <field name="domain">[('appointment_id', '!=', False)]</field>
+        </record>
+
+        <!-- Menus -->
+        <record id="appointment.appointment_type_menu" model="ir.ui.menu">
+            <field name="name">Appointment Type</field>
+            <field name="sequence">60</field>
+            <field name="parent_id" ref="appointment.appointment_menu_config"/>
+        </record>
+
+        <record id="appointment.main_menu_appointments" model="ir.ui.menu">
+            <field name="action" ref="action_appointment"/>
+        </record>
+
+        <menuitem id="appointment.menu_appointments" name="Appointments"
+                  sequence="5" action="action_appointment"
+                  parent="appointment.main_menu_appointments"/>
+    </data>
+</odoo>

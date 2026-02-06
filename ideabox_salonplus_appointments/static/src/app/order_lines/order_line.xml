@@ -5,10 +5,13 @@
         <xpath expr="//ul[hasclass('info-list')]" position="inside" >
             <t t-if="line.resource_name">
                 <li class="border rounded fw-bolder px-2 py-1 me-1 text-white shadow-sm" style="background-color:#374151;"> 
-                    <i class="fa fa-user me-1" role="img" aria-label="Resourse" title="Resourse"/>
-                    <t t-esc="line.resource_name" />
+                        <i class="fa fa-user me-1" role="img" aria-label="Resource" title="Resource"/>
+                        <t t-esc="line.resource_name" />
+                    <br/>
                 </li>
             </t>
         </xpath>
     </t>
 </templates>
+
+

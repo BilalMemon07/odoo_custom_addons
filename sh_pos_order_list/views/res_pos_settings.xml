@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_pos_pos_sh_pos_order_list_config_form">
+         <field name="name">res.config.settings.view.form.inherit.pos_sh_pos_order_list</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block id="pos_interface_section" position="after">
+                <block id="sh_pos_order_lsit" title="Order List">
+                    <setting>
+                        <field name="pos_sh_enable_order_list"/>
+                        <div class="mt16">
+                            <div class="text-muted">
+                                Use to show pos ordes in Point of sale
+                            </div>
+                        </div>
+                        <div class="mt16" invisible="not pos_sh_enable_order_list">
+                            <label for="pos_sh_load_order_by"  class="o_light_label"/>
+                            <field name="pos_sh_load_order_by" required="pos_sh_enable_order_list" />
+                        </div>
+                        <div class="mt16" invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'session_wise'" help="Load Order of Current Session or Last No Of Session">
+                            <label for="pos_sh_session_wise_option" class="o_light_label"/>
+                            <field name="pos_sh_session_wise_option" widget="radio" required="pos_sh_enable_order_list" />
+                            <div invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'session_wise' or pos_sh_session_wise_option == 'current_session'">
+                                <label for="pos_sh_last_no_session" class="o_light_label"/>
+                                <field name="pos_sh_last_no_session" invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'session_wise' or pos_sh_session_wise_option == 'current_session'" required="pos_sh_enable_order_list" />
+                            </div>
+                        </div>
+                        <div class="mt16" invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'day_wise'" help="Load Order of Current Day or Last No Of Days">
+                            <label for="pos_sh_day_wise_option" class="o_light_label"/>
+                            <field name="pos_sh_day_wise_option" widget="radio" required="pos_sh_enable_order_list" />
+                            <div invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'day_wise' or pos_sh_day_wise_option == 'current_day'">
+                                <label for="pos_sh_last_no_days" class="o_light_label"/>
+                                <field name="pos_sh_last_no_days" invisible="not pos_sh_enable_order_list or pos_sh_load_order_by != 'day_wise' or pos_sh_day_wise_option == 'current_day'" required="pos_sh_enable_order_list" />
+                            </div>
+                        </div>
+                        <div class="mt16" invisible="not pos_sh_enable_order_list">
+                            <label for="pos_sh_how_many_order_per_page" class="o_light_label"/>
+                            <field name="pos_sh_how_many_order_per_page" required="pos_sh_enable_order_list" />
+                        </div>
+                    </setting>
+                    
+                    <setting id="sh_pos_order_re_order" invisible="not pos_sh_enable_order_list">
+                        <div class="mt16" invisible="not pos_sh_enable_order_list">
+                            <field name="pos_sh_enable_re_order"/>
+                            <label for="pos_sh_enable_re_order" />
+                            <div class="text-muted">
+                                ReOrder POS Order From Order Screen
+                            </div>
+                        </div>
+                        <div class="mt16" invisible="not pos_sh_enable_order_list">
+                            <field name="pos_sh_enable_order_reprint"/>
+                            <label for="pos_sh_enable_order_reprint" />
+                            <div class="text-muted">
+                                Print Order Receipt From Order Screen
+                            </div>
+                        </div>
+                    </setting>
+                </block> 
+            </block>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension" owl="1"> 
+        <xpath expr="//div[hasclass('receipt-options')]" position="after">
+           <div class="button receipt btn btn-lg btn-secondary mx-2" t-on-click="print_multi_receipt" >
+                Print Multiple Receipts <i class="fa fa-print"></i>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,71 @@
+<odoo>
+    <record id="view_pos_order_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_stock_picking']" position="after">
+                <button name="action_view_commission"
+                icon="fa-thumbs-o-up"
+                type="object"
+                    class="oe_highlight"
+                    string="Commission"
+                    invisible="commission_count == 0">
+                    <field widget="statinfo" name="commission_count" string="Commission" />
+                </button>
+
+            </xpath>
+        </field>
+    </record>
+    
+
+
+    <record id="view_resource_commission_form" model="ir.ui.view">
+        <field name="name">resource.commission.form</field>
+        <field name="model">resource.commission</field>
+        <field name="arch" type="xml">
+            <form string="Commissions">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="amount" />
+                        <field name="employee_id" />
+                        <field name="product_id" />
+                        <field name="pos_order_id" />
+                        <field name="date" />
+                        <field name="commission_type" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <data>
+        <record id="view_resource_commission_tree" model="ir.ui.view">
+            <field name="name">resource.commission.tree</field>
+            <field name="model">resource.commission</field>
+            <field name="arch" type="xml">
+                <list string="Commissions">
+                    <field name="name" />
+                    <field name="amount" />
+                    <field name="employee_id" />
+                    <field name="pos_order_id" />
+                    <field name="date" />
+                </list>
+            </field>
+        </record>
+        <record id="action_resource_commission" model="ir.actions.act_window">
+            <field name="name">Commissions</field>
+            <field name="res_model">resource.commission</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Commission record.
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_resource_commission" name="Commissions" parent="point_of_sale.menu_point_config_product"
+            action="action_resource_commission" />
+
+    </data>
+
+</odoo>

@@ -10,22 +10,19 @@ patch(PosOrderline.prototype, {
         this.rpc = rpc;
     },
 
-    async get_resourses(){
-      if (typeof this.id !='string'){
-        if (this.resource_id){
-                await rpc("/get_pos_resourse", {
-                    resource_id : this.resource_id,
-                    pos_order_line_id : this.id
-                });
-            }
+    async get_resources() {
+        if (typeof (this.id) != 'string' && this.resource_id) {
+            await rpc("/get_pos_resource", {
+                resource_id: this.resource_id,
+                pos_order_line_id: this.id,
+            });
         }
     },
-
     getDisplayData() {
-        this.get_resourses()
+        this.get_resources();
         return {
             ...super.getDisplayData(),
-            resource_name : this.resource_name,
+            resource_name: this.resource_name || '',
         };
     },
 })

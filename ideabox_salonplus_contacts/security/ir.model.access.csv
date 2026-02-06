@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_karachi_area,karachi.area,model_karachi_area,,1,1,1,0
+access_karachi_area_block,karachi.area.block,model_karachi_area_block,,1,1,1,0
+
+

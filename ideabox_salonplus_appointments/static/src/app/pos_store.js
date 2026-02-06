@@ -5,8 +5,12 @@ import { patch } from "@web/core/utils/patch";
 import { PosStore } from "@point_of_sale/app/store/pos_store";
 
 patch(PosStore.prototype, {
-    async onClickAppointment(clickedOrderId) {
-        const appointment_appointment = await this._getAppointment(clickedOrderId);
+    async onClickAppointment(appointment_id) {
+        const appointment_appointment = await this._getAppointment(appointment_id);
+        const order = this.env.services.pos.get_order();
+        if (order) {
+            order.appointment_ids.push(appointment_id);
+        }
         for (let i = 0; i < appointment_appointment.resource_line_ids.length; ++i) {
             const line = appointment_appointment.resource_line_ids[i];
             const newLineValues = {
@@ -16,7 +20,7 @@ patch(PosStore.prototype, {
                     price_type: "automatic",
                     order_id: this.get_order(),
                     resource_id : line.resource_id,
-                    resourse_name : line.resourse_name,
+                    resource_name : line.resource_name
                 };
                 await this.addLineToCurrentOrder(newLineValues, {}, false);
             }

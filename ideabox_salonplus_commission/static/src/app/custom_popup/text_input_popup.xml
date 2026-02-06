@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ideabox_salonplus_commission.TextInputPopup">
+        <Dialog title="props.title">
+    <!-- Toggle Buttons -->
+    <div class="d-flex flex-wrap gap-2 mb-3">
+        <t t-foreach="props.buttons" t-as="button" t-key="button_index">
+            <button t-on-click="() => this.buttonClick(button)" type="button"
+                t-attf-class="btn btn-sm rounded-pill {{button.isSelected ? 'btn-primary' : 'btn-outline-secondary'}}">
+                <t t-esc="button.label"/>
+            </button>
+        </t>
+    </div>
+
+    <!-- Payment Method Selector -->
+    <div class="mb-4">
+        <label for="service_type" class="form-label fw-bold">Service Type</label>
+        <select id="service_types" name="service_types" t-model="state.service_type"
+                class="form-select form-select-lg rounded-pill shadow-sm">
+            <option value="" disabled="True">Select service type</option>
+            <option value="onsite">Onsite</option>
+            <option value="offsite">Offsite</option>
+        </select>
+    </div>
+
+    <!-- Footer Buttons -->
+    <t t-set-slot="footer">
+        <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-outline-secondary rounded-pill px-4" t-on-click="close">
+                Discard
+            </button>
+            <button class="btn btn-primary rounded-pill px-4" t-on-click="confirm">
+                Apply
+            </button>
+        </div>
+    </t>
+</Dialog>
+
+
+    </t>
+</templates>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">sh_multiple_timer.hr_employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page
+                    name="timesheet_info"
+                    string="Timesheet Information"
+                    groups="base.group_no_one"
+                >
+                    <group>
+
+                        <field name="start_time" />
+                        <field name="end_time" />
+                        <field name="task_id" />
+                        <field name="account_analytic_id" />
+                        <field name="active_running_task_id" />
+                        <field name="task_running_ids" />
+                    </group>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

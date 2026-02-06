@@ -1,0 +1,10 @@
+<odoo>
+    <record id="shift_detail_report_pdf" model="ir.actions.report">
+        <field name="name">Shift Details Report</field>
+        <field name="model">shift.detail.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">shift_detail_report.shift_detail_reports</field>
+        <field name="report_file">shift_detail_report.shift_detail_reports</field>
+
+    </record>
+</odoo>

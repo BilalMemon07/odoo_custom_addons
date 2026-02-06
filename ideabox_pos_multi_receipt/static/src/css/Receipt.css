@@ -1,0 +1,246 @@
+.pos-receipt {
+        width: 280px;
+        background-color: white;
+        padding: 15px;
+    }
+
+    .pos-receipt-logo {
+        display: block;
+        margin: 0 auto 10px;
+        max-width: 150px;
+        max-height: 80px;
+    }
+
+    .receipt-header {
+        text-align: center;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 10px;
+    }
+
+    .company-name {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .company-address {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .receipt-info {
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3px;
+    }
+
+    .info-label {
+        font-weight: bold;
+    }
+
+    .receipt-orderlines {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    .receipt-orderlines th {
+        border-bottom: 1px dashed #333;
+        padding: 5px 0;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .receipt-orderlines td {
+        padding: 5px 0;
+        font-size: 12px;
+        vertical-align: top;
+    }
+
+    .product-col {
+        width: 55%;
+        text-align: left;
+    }
+
+    .qty-col {
+        width: 20%;
+        text-align: left;
+        padding-left: 2px;
+    }
+
+    .amount-col {
+        width: 25%;
+        text-align: right;
+    }
+
+    .product-name {
+        font-weight: bold;
+    }
+
+    .discount-note {
+        font-size: 10px;
+        color: #666;
+        font-style: italic;
+    }
+
+    .customer-note {
+        font-size: 10px;
+        color: #333;
+        margin-top: 2px;
+    }
+
+    .receipt-totals {
+        border-top: 1px dashed #333;
+        padding-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .total-label {
+        font-weight: bold;
+    }
+
+    .total-amount {
+        font-weight: bold;
+    }
+
+    .grand-total {
+        font-size: 14px;
+        font-weight: bold;
+        border-top: 1px solid #333;
+        padding-top: 5px;
+        margin-top: 5px;
+    }
+
+    .payment-section {
+        border-top: 1px dashed #333;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .payment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+
+    .payment-table th {
+        border-bottom: 1px dashed #333;
+        padding: 5px 0;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .payment-table td {
+        padding: 5px 0;
+        font-size: 12px;
+    }
+
+    .payment-method-col {
+        width: 60%;
+        text-align: left;
+    }
+
+    .payment-amount-col {
+        width: 40%;
+        text-align: right;
+    }
+
+    .receipt-footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 12px;
+        border-top: 1px dashed #ddd;
+        padding-top: 10px;
+    }
+
+    .thank-you {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+    
+    .pos-receipt-taxes {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .pos-receipt-amount {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    
+    .pos-receipt-right-align {
+        text-align: right;
+    }
+    
+    .d-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3px;
+        font-size: 12px;
+    }
+    
+    .fw-bolder {
+        font-weight: bolder;
+    }
+    
+    .ms-auto {
+        margin-left: auto;
+    }
+    
+    .me-2 {
+        margin-right: 10px;
+    }
+    
+    .text-start {
+        text-align: left;
+    }
+    
+    .divider {
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .amount-due {
+        font-weight: bold;
+        color: #d9534f;
+        border-top: 1px solid #333;
+        padding-top: 5px;
+        margin-top: 5px;
+    }
+    .resource-row td {
+        text-align: center;
+        background-color: #888;     
+        color: white;               
+        font-size: 11px;            
+        border-radius: 6px;         
+        padding: 4px 6px;           
+    }

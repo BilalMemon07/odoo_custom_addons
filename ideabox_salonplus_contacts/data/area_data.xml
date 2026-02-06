@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Karachi Area Records -->
+    <record id="karachi_area_1" model="karachi.area">
+        <field name="name">Defence</field>
+    </record>
+    <record id="karachi_area_2" model="karachi.area">
+        <field name="name">Clifton</field>
+    </record>
+    <record id="karachi_area_3" model="karachi.area">
+        <field name="name">Gulshan</field>
+    </record>
+    <record id="karachi_area_4" model="karachi.area">
+        <field name="name">F B Area</field>
+    </record>
+    <record id="karachi_area_5" model="karachi.area">
+        <field name="name">Garden</field>
+    </record>
+    <record id="karachi_area_6" model="karachi.area">
+        <field name="name">Saddar</field>
+    </record>
+    <record id="karachi_area_7" model="karachi.area">
+        <field name="name">P.E.C.H.S</field>
+    </record>
+
+    <!-- Karachi Area Block Records -->
+    <record id="karachi_area_block_1" model="karachi.area.block">
+        <field name="name">Phase 1</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_2" model="karachi.area.block">
+        <field name="name">Phase 2</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_3" model="karachi.area.block">
+        <field name="name">Phase 2 EXT</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_4" model="karachi.area.block">
+        <field name="name">Phase 4</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_5" model="karachi.area.block">
+        <field name="name">Phase 4 EXT</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_6" model="karachi.area.block">
+        <field name="name">Phase 5</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_7" model="karachi.area.block">
+        <field name="name">Phase 5 EXT</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_8" model="karachi.area.block">
+        <field name="name">Phase 6</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_9" model="karachi.area.block">
+        <field name="name">Phase 7</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_10" model="karachi.area.block">
+        <field name="name">Phase 7 EXT</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_11" model="karachi.area.block">
+        <field name="name">Phase 8</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_12" model="karachi.area.block">
+        <field name="name">Phase 8 EXT</field>
+        <field name="area_id" ref="karachi_area_1"/>
+    </record>
+    <record id="karachi_area_block_13" model="karachi.area.block">
+        <field name="name">Lower Gizri</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_14" model="karachi.area.block">
+        <field name="name">Upper Gizri</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_15" model="karachi.area.block">
+        <field name="name">Shireen Jinnah Colony</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_16" model="karachi.area.block">
+        <field name="name">2 Talwaar</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_17" model="karachi.area.block">
+        <field name="name">3 Talwaar</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_18" model="karachi.area.block">
+        <field name="name">Abdullah Shah Ghazi</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_19" model="karachi.area.block">
+        <field name="name">Bilawal Chorangi</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_20" model="karachi.area.block">
+        <field name="name">Boat Basin</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_21" model="karachi.area.block">
+        <field name="name">Sea View</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_22" model="karachi.area.block">
+        <field name="name">Govt Officers Residence</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_23" model="karachi.area.block">
+        <field name="name">Clifton Bridge</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_24" model="karachi.area.block">
+        <field name="name">Chaudhry Khaliq Uz Zaman Rd</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_25" model="karachi.area.block">
+        <field name="name">Old Clifton</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_26" model="karachi.area.block">
+        <field name="name">Bath Island</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_27" model="karachi.area.block">
+        <field name="name">Delhi Colony</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_28" model="karachi.area.block">
+        <field name="name">Frere Town</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_29" model="karachi.area.block">
+        <field name="name">Kemari</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_30" model="karachi.area.block">
+        <field name="name">Manzoor Colony</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_31" model="karachi.area.block">
+        <field name="name">Lalazaar</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_32" model="karachi.area.block">
+        <field name="name">Bhit Shah Island</field>
+        <field name="area_id" ref="karachi_area_2"/>
+    </record>
+    <record id="karachi_area_block_33" model="karachi.area.block">
+        <field name="name">Block 1</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_34" model="karachi.area.block">
+        <field name="name">Block 2</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_35" model="karachi.area.block">
+        <field name="name">Block 3</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_36" model="karachi.area.block">
+        <field name="name">Block 4</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_37" model="karachi.area.block">
+        <field name="name">Block 4 A</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_38" model="karachi.area.block">
+        <field name="name">Block 5</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_39" model="karachi.area.block">
+        <field name="name">Block 6</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_40" model="karachi.area.block">
+        <field name="name">Block 7</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_41" model="karachi.area.block">
+        <field name="name">Block 8</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_42" model="karachi.area.block">
+        <field name="name">Block 9</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_43" model="karachi.area.block">
+        <field name="name">Block 10</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_44" model="karachi.area.block">
+        <field name="name">Block 10 A</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_45" model="karachi.area.block">
+        <field name="name">Block 11</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_46" model="karachi.area.block">
+        <field name="name">Block 13</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_47" model="karachi.area.block">
+        <field name="name">Block 13 A</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_48" model="karachi.area.block">
+        <field name="name">Block 13 B</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_49" model="karachi.area.block">
+        <field name="name">Block 13 C</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_50" model="karachi.area.block">
+        <field name="name">Block 13 D</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_51" model="karachi.area.block">
+        <field name="name">Block 13 D-1</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_52" model="karachi.area.block">
+        <field name="name">Block 13 D-2</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_53" model="karachi.area.block">
+        <field name="name">Block 13 D-3</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_54" model="karachi.area.block">
+        <field name="name">Block 13 E</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_55" model="karachi.area.block">
+        <field name="name">Block 13 G</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_56" model="karachi.area.block">
+        <field name="name">Block 14</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_57" model="karachi.area.block">
+        <field name="name">Block 15</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_58" model="karachi.area.block">
+        <field name="name">Block 16</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_59" model="karachi.area.block">
+        <field name="name">Block 17</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_60" model="karachi.area.block">
+        <field name="name">Block 18</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_61" model="karachi.area.block">
+        <field name="name">Block 19</field>
+        <field name="area_id" ref="karachi_area_3"/>
+    </record>
+    <record id="karachi_area_block_62" model="karachi.area.block">
+        <field name="name">Block 1</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_63" model="karachi.area.block">
+        <field name="name">Block 2</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_64" model="karachi.area.block">
+        <field name="name">Block 4</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_65" model="karachi.area.block">
+        <field name="name">Block 5</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_66" model="karachi.area.block">
+        <field name="name">Block 6</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_67" model="karachi.area.block">
+        <field name="name">Block 8</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_68" model="karachi.area.block">
+        <field name="name">Block 9</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_69" model="karachi.area.block">
+        <field name="name">Block 10</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_70" model="karachi.area.block">
+        <field name="name">Block 11</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_71" model="karachi.area.block">
+        <field name="name">Block 13</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_72" model="karachi.area.block">
+        <field name="name">Block 14</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_73" model="karachi.area.block">
+        <field name="name">Block 15</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_74" model="karachi.area.block">
+        <field name="name">Block 16</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_75" model="karachi.area.block">
+        <field name="name">Block 17</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_76" model="karachi.area.block">
+        <field name="name">Block 18</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_77" model="karachi.area.block">
+        <field name="name">Block 19</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_78" model="karachi.area.block">
+        <field name="name">Block 20</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_79" model="karachi.area.block">
+        <field name="name">Block 21</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_80" model="karachi.area.block">
+        <field name="name">Block 22</field>
+        <field name="area_id" ref="karachi_area_4"/>
+    </record>
+    <record id="karachi_area_block_81" model="karachi.area.block">
+        <field name="name">Garden East</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_82" model="karachi.area.block">
+        <field name="name">Garden West</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_83" model="karachi.area.block">
+        <field name="name">Usmanabad</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_84" model="karachi.area.block">
+        <field name="name">Badshahi compound</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_85" model="karachi.area.block">
+        <field name="name">Hasan Lashkari Village</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_86" model="karachi.area.block">
+        <field name="name">Dhobi Ghat</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_87" model="karachi.area.block">
+        <field name="name">Shoe Market Area</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_88" model="karachi.area.block">
+        <field name="name">Pakistan Quarters</field>
+        <field name="area_id" ref="karachi_area_5"/>
+    </record>
+    <record id="karachi_area_block_89" model="karachi.area.block">
+        <field name="name">Civil Lines</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_90" model="karachi.area.block">
+        <field name="name">Kharadar</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_91" model="karachi.area.block">
+        <field name="name">PIDC</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_92" model="karachi.area.block">
+        <field name="name">Hijrat Colony</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_93" model="karachi.area.block">
+        <field name="name">Punjab Colony</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_94" model="karachi.area.block">
+        <field name="name">Hashmi Colony</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_95" model="karachi.area.block">
+        <field name="name">Kashmir Mujahid Colony</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_96" model="karachi.area.block">
+        <field name="name">City Railway Colony</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_97" model="karachi.area.block">
+        <field name="name">Millat Nagar</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_98" model="karachi.area.block">
+        <field name="name">Gazdarabad</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_99" model="karachi.area.block">
+        <field name="name">Frere Hall</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_100" model="karachi.area.block">
+        <field name="name">Old Haji Camp</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_101" model="karachi.area.block">
+        <field name="name">Ranchore Line</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_102" model="karachi.area.block">
+        <field name="name">Staff Lines</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_103" model="karachi.area.block">
+        <field name="name">Iqbal Lines</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_104" model="karachi.area.block">
+        <field name="name">Army Officers Mess</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_105" model="karachi.area.block">
+        <field name="name">Jinnah Lines</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_106" model="karachi.area.block">
+        <field name="name">Umerkot Lines</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_107" model="karachi.area.block">
+        <field name="name">Askari-I</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_108" model="karachi.area.block">
+        <field name="name">Askari-II</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_109" model="karachi.area.block">
+        <field name="name">Askari-III</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_110" model="karachi.area.block">
+        <field name="name">Com Kar Cantt</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_111" model="karachi.area.block">
+        <field name="name">Preedy Quarters</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_112" model="karachi.area.block">
+        <field name="name">Pakistan Quarters</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_113" model="karachi.area.block">
+        <field name="name">Ratan Talao</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_114" model="karachi.area.block">
+        <field name="name">Urdu Bazaar</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_115" model="karachi.area.block">
+        <field name="name">Gari Khata</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_116" model="karachi.area.block">
+        <field name="name">Burns Road</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_117" model="karachi.area.block">
+        <field name="name">Bohri Bazaar</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_118" model="karachi.area.block">
+        <field name="name">Soldier Bazaar</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_119" model="karachi.area.block">
+        <field name="name">Lucky Star</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_120" model="karachi.area.block">
+        <field name="name">Aram Bag</field>
+        <field name="area_id" ref="karachi_area_6"/>
+    </record>
+    <record id="karachi_area_block_121" model="karachi.area.block">
+        <field name="name">Bihar Muslim Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_122" model="karachi.area.block">
+        <field name="name">Delhi Mercantile Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_123" model="karachi.area.block">
+        <field name="name">Oversees Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_124" model="karachi.area.block">
+        <field name="name">Darulaman</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_125" model="karachi.area.block">
+        <field name="name">Modern Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_126" model="karachi.area.block">
+        <field name="name">Jinnah Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_127" model="karachi.area.block">
+        <field name="name">Karachi Memon Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_128" model="karachi.area.block">
+        <field name="name">Shabbirabad</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_129" model="karachi.area.block">
+        <field name="name">Al-Hamra Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_130" model="karachi.area.block">
+        <field name="name">Banglore Town</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_131" model="karachi.area.block">
+        <field name="name">Mohommad Ali Society</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_132" model="karachi.area.block">
+        <field name="name">Pakistan Society - Block 2</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_133" model="karachi.area.block">
+        <field name="name">Block 3</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_134" model="karachi.area.block">
+        <field name="name">Block 6</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_135" model="karachi.area.block">
+        <field name="name">Sindhi Muslim</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_136" model="karachi.area.block">
+        <field name="name">KDA Scheme no 1</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_137" model="karachi.area.block">
+        <field name="name">KDA Scheme no 1 - A</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+    <record id="karachi_area_block_138" model="karachi.area.block">
+        <field name="name">KDA Scheme no 7</field>
+        <field name="area_id" ref="karachi_area_7"/>
+    </record>
+</odoo>

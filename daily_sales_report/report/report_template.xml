@@ -1,0 +1,193 @@
+<odoo>
+    <template id="daily_sales_reports">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page" style="font-size:12px">
+                    <div class="row ">
+                        <div class="col-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE FROM</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_from'])" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE TO</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_to'])" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>PAYMENT STATUS</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['payment_status'])" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <h3
+                                    style="background-color: #f2f2f2;color: #00509e; text-align: center; padding: 5px;">Daily Sales Report</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table width="100%" style="border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr style="background-color: #00509e; color: white;">
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Order No</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Date</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Customer Name</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Services</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Products</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Discount</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Tax</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Tip</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Bill Amount</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Paid Amount</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Balance</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Payment Status</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody t-if="data">
+                            <t t-set="total_services" t-value="0" />
+                            <t t-set="total_products" t-value="0" />
+                            <t t-set="total_discounts" t-value="0" />
+                            <t t-set="total_taxes" t-value="0" />
+                            <t t-set="total_tips" t-value="0" />
+                            <t t-set="total_bill" t-value="0" />
+                            <t t-set="total_paid" t-value="0" />
+                            <t t-set="total_balance" t-value="0" />
+                            <t t-foreach="data" t-as="value">
+                                <tr>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['order_no']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['date_order']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['partner_id']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['services_total']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['product_total']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['discount_total']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['taxes']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['tips']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['bill_amount']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['paid_amount']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['balance']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['payment_status']" />
+                                    </td>
+                                    <t t-set="total_services" t-value="total_services + value['services_total']" />
+                                    <t t-set="total_products" t-value="total_products + value['product_total']" />
+                                    <t t-set="total_discounts" t-value="total_discounts + value['discount_total']" />
+                                    <t t-set="total_taxes" t-value="total_taxes + value['taxes']" />
+                                    <t t-set="total_tips" t-value="total_tips + value['tips']" />
+                                    <t t-set="total_bill" t-value="total_bill + value['bill_amount']" />
+                                    <t t-set="total_paid" t-value="total_paid + value['paid_amount']" />
+                                    <t t-set="total_balance" t-value="total_balance + value['balance']" />
+                                </tr>
+                            </t>
+                            <tr style="background-color: #00509e; color: white">
+                                <td colspan="3" style="padding: 5px; text-align: center; width: 100px">
+                                    <span>Total:</span>
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_services" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_products" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_discounts" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_taxes" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_tips" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_bill" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_paid" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_balance" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </t>
+
+        </t>
+    </template>
+</odoo>

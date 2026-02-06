@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record id="view_employee_form_inherit_custom_field" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_ids']" position="after">
+                    <field name="product_commission_applicable" />
+                    <field name="services" widget="many2many_tags" />
+                </xpath>
+                <xpath expr="//field[@name='place_of_birth']" position="after">
+                    <field name="father_name" />
+                </xpath>
+                <xpath expr="//field[@name='emergency_phone']" position="after">
+                    <field name="emergency_contact_relation" />
+                    <field name="blood_group" />
+                </xpath>
+
+                <field name="birthday" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="identification_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="bank_account_id" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </field>
+
+                <field name="private_street" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="private_street2" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="private_city" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="private_country_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+                <field name="emergency_contact" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="emergency_phone" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

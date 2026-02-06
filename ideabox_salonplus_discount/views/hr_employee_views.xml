@@ -6,7 +6,7 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='job_id']" position="after">
+            <xpath expr="//page[@name='hr_settings']" position="before">
                 <field name="limited_discount_percentage"/>
                 <field name="limited_discount_amount"/>
             </xpath>

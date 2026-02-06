@@ -1,0 +1,43 @@
+# Part of Softhealer Technologies.
+{
+    "name": "Manage Multiple Timers For Tasks | Task Multiple Timer",
+    "author": "Softhealer Technologies,Arne De Geeter",
+    "website": "https://arne.odoo.com",
+    "version": "18.0.0.0.18",
+    "category": "Project",
+    "depends": ["project", "timesheet_grid", "hr_timesheet", "analytic"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/sh_edit_timesheet_groups.xml",
+        "views/sh_start_timesheet_views.xml",
+        "views/hr_employee.xml",
+        "views/sh_task_time_account_line_views.xml",
+        "views/project_task_views.xml",
+        "views/res_config_settings.xml",
+        "views/sh_pause_task_entry_views.xml",
+        "views/account_analytic_line_views.xml",
+        "wizard/sh_edit_timesheet_views.xml",
+    ],
+    "assets": {
+        "web.assets_backend": [
+            # "web/static/lib/jquery/jquery.js",
+            # "sh_multiple_timer/static/src/js/systray_icon_menu.js",
+            # "sh_multiple_timer/static/src/js/pause_entry_icon_menu.js",
+            # # 'sh_multiple_timer/static/src/js/time_track.js',
+            # # 'sh_multiple_timer/static/src/js/kanban_timer.js',
+            # "sh_multiple_timer/static/src/scss/time_track.scss",
+            # "sh_multiple_timer/static/src/xml/time_track.xml",
+            # "sh_multiple_timer/static/src/xml/resume_tmpl.xml",
+            # # 'sh_multiple_timer/static/src/xml/kanban_timer.xml',
+        ],
+    },
+    "images": [
+        "static/description/background.png",
+    ],
+    "installable": True,
+    "auto_install": False,
+    "application": True,
+    "license": "OPL-1",
+    "price": "60",
+    "currency": "EUR",
+}

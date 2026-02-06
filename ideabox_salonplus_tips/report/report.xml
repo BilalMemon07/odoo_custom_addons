@@ -1,0 +1,10 @@
+<odoo>
+    <record id="action_report_tip" model="ir.actions.report">
+        <field name="name">Tips Report</field>
+        <field name="model">tip.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ideabox_salonplus_tips.tip_reports</field>
+        <field name="report_file">ideabox_salonplus_tips.tip_reports</field>
+
+    </record>
+</odoo>

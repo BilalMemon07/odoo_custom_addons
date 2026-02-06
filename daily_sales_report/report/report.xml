@@ -1,0 +1,10 @@
+<odoo>
+    <record id="daily_sales_report_pdf" model="ir.actions.report">
+        <field name="name">Daily Sales Report</field>
+        <field name="model">daily.sales.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">daily_sales_report.daily_sales_reports</field>
+        <field name="report_file">daily_sales_report.daily_sales_reports</field>
+
+    </record>
+</odoo>

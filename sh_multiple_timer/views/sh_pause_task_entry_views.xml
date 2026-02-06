@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sh_pause_task_entry_form_view" model="ir.ui.view">
+        <field name="name">sh.pause.task.entry.form</field>
+        <field name="model">sh.pause.task.entry</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="start_date" />
+                            <field name="task_id" />
+                            <field name="account_analytic_id" />
+                        </group>
+                        <group>
+                            <field name="sh_pause_time" />
+                            <field name="duration" />
+                            <field name="difference_time" />
+                            <field name="difference_time_float" widget='float_time' />
+                            <field name="is_task_running" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sh_pause_task_entry_tree_view" model="ir.ui.view">
+        <field name="name">sh.pause.task.entry.form</field>
+        <field name="model">sh.pause.task.entry</field>
+        <field name="arch" type="xml">
+            <list create='0' edit="0" delete="false">
+                <field name="account_analytic_id" />
+                <field name="name" invisible='1' />
+                <field name="start_date" />
+                <field name="task_id" invisible='1' />
+                <field name="sh_pause_time" />
+                <field name="duration" invisible='1' />
+                <field name="difference_time" />
+                <field name="difference_time_float" widget='float_time' />
+                <field name="user_id" />
+                <field name="is_task_running" />
+                <button
+                    name="action_edit_timesheet"
+                    type='object'
+                    string="Edit"
+                    class="btn-primary"
+                    invisible='is_task_running'
+                >
+                </button>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sh_pause_task_entry_action">
+        <field name="name">Pause Task Timers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.pause.task.entry</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!-- ============================== -->
+    <!-- ==== FOR DEVLOPER ONLY ======= -->
+    <!-- ============================== -->
+
+    <menuitem
+        id="sh_pause_task_entry_menu"
+        name="Pause Task Timers"
+        parent="hr_timesheet.menu_hr_time_tracking"
+        action="sh_multiple_timer.sh_pause_task_entry_action"
+        groups="base.group_system"
+        sequence="100"
+    />
+
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="edit_timesheet_form">
+        <field name="name">Edit Task</field>
+        <field name="model">sh.edit.timesheet</field>
+        <field name="arch" type="xml">
+            <form string="Edit Task">
+                <group>
+                    <group>
+                        <field name="sh_pause_timesheet_id" readonly="True" />
+                        <field name="difference_time_float" widget='float_time' />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        name="edit_pause_task_timesheet"
+                        string="Save"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    or
+                    <button special="cancel" string="Cancel" class="oe_link" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_edit_task">
+        <field name="name">Edit Timesheet Entry</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.edit.timesheet</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

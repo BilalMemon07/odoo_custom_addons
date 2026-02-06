@@ -1,0 +1,10 @@
+<odoo>
+    <record id="resource_schedule_report_pdf" model="ir.actions.report">
+        <field name="name">Resource Schedule Report</field>
+        <field name="model">resource.schedule.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">resource_schedule_report.resource_schedule_reports</field>
+        <field name="report_file">resource_schedule_report.resource_schedule_reports</field>
+
+    </record>
+</odoo>

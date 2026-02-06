@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.commission</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="pos_interface_section" position="after">
+                <block title="Commission" name="commission_settings" class="oe_setting_box">
+                    <setting>
+                        <field name="allow_commission" />
+                    </setting>
+                    <setting invisible="not allow_commission">
+                        <field name="commission_type" required="allow_commission" />
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

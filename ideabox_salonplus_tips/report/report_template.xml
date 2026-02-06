@@ -1,0 +1,181 @@
+<odoo>
+    <template id="tip_reports">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page" style="font-size:12px">
+                    <div class="row ">
+                        <div class="col-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE FROM</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_to'])" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 3px;">
+                                        <strong>DATE TO</strong>
+                                    </td>
+                                    <td style="padding: 3px;">
+                                        <span t-esc="str(others['date_to'])" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <h3
+                                    style="background-color: #f2f2f2;color: #00509e; text-align: center; padding: 5px;">Tips
+                                    Report</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table width="100%" style="border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr style="background-color: #00509e; color: white;">
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Invoice Date</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b># of Services</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;"
+                                    t-if="others['billing_amount']">
+                                    <b>Invoice Amount</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;"
+                                    t-if="others['client_name']">
+                                    <b>Client Name</b>
+                                </th>
+                                <th style="padding: 5px; text-align: center; width:100px;">
+                                    <b>Tip Received</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody t-if="data">
+                            <t t-set="total_amount" t-value="0" />
+                            <t t-set="total_tip" t-value="0" />
+                            <t t-set="subtotal_amount" t-value="0" />
+                            <t t-set="subtotal_tip" t-value="0" />
+                            <t t-set="resource" t-value="''" />
+                            <t t-foreach="data" t-as="value">
+                                <t t-if="resource != value['employee_name']">
+                                    <tr t-if="resource != ''"
+                                        style="background-color: #00509e; color: white">
+                                        <td />
+                                        <td style="padding: 5px; text-align: center; width: 100px">
+                                            <span>Subtotal:</span>
+                                        </td>
+                                        <td style="padding: 5px; text-align: center; width: 100px"
+                                            t-if="others['billing_amount']">
+                                            <span t-esc="subtotal_amount" />
+                                        </td>
+                                        <td style="padding: 5px; text-align: center; width: 100px"
+                                            t-if="others['client_name']" />
+                                        <td style="padding: 5px; text-align: center; width: 100px">
+                                            <span t-esc="subtotal_tip" />
+                                        </td>
+                                        <t t-set="subtotal_amount" t-value="0" />
+                                        <t t-set="subtotal_tip" t-value="0" />
+
+                                    </tr>
+                                    <tr style=" color: white;background:black">
+                                        <t t-set="resource" t-value="value['employee_name']" />
+                                        <td colspan="3"
+                                            t-if=" not others['billing_amount'] and not others['client_name']"
+                                            style="text-align: center; font-weight: normal;font-size:14px">
+                                            <strong t-esc="resource" class="mt-2" />
+                                        </td>
+                                        <td colspan="4"
+                                            t-if="bool(others['billing_amount']) != bool(others['client_name'])"
+                                            style="text-align: center; font-weight: normal;font-size:14px">
+                                            <strong t-esc="resource" class="mt-2" />
+                                        </td>
+                                        <td colspan="5"
+                                            t-if="others['billing_amount'] and others['client_name']"
+                                            style="text-align: center; font-weight: normal;font-size:14px">
+                                            <strong t-esc="resource" class="mt-2" />
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['order_date']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['services']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal"
+                                        t-if="others['billing_amount']">
+                                        <span t-esc="value['order_amount']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal"
+                                        t-if="others['client_name']">
+                                        <span t-esc="value['client_name']" />
+                                    </td>
+                                    <td
+                                        style="text-align: center; padding: 4px; font-weight: normal">
+                                        <span t-esc="value['tip']" />
+                                    </td>
+                                    <t t-set="total_amount"
+                                        t-value="total_amount + value['order_amount']" />
+                                    <t t-set="total_tip" t-value="total_tip + value['tip']" />
+                                    <t t-set="subtotal_amount"
+                                        t-value="subtotal_amount + value['order_amount']" />
+                                    <t t-set="subtotal_tip" t-value="subtotal_tip + value['tip']" />
+                                </tr>
+                            </t>
+                            <tr style="background-color: #00509e; color: white">
+                                <td />
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span>Subtotal:</span>
+                                </td>
+                                <td t-if="others['billing_amount']"
+                                    style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="subtotal_amount" />
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px"
+                                    t-if="others['client_name']" />
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="subtotal_tip" />
+                                </td>
+                                <t t-set="subtotal_amount" t-value="0" />
+                                <t t-set="subtotal_tip" t-value="0" />
+
+                            </tr>
+                            <tr style="background-color: #00509e; color: white">
+                                <td style="padding: 5px; text-align: center; width: 100px" />
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span>Total:</span>
+                                </td>
+                                <td style="padding: 5px; text-align: center; width: 100px"
+                                    t-if="others['billing_amount']">
+                                    <span t-esc="total_amount" />
+                                </td>
+                                <td t-if="others['client_name']" />
+                                <td style="padding: 5px; text-align: center; width: 100px">
+                                    <span t-esc="total_tip" />
+                                </td>
+                                <td />
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+            </t>
+
+        </t>
+    </template>
+</odoo>
