@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_dev_stock_picking_fill_form" model="ir.ui.view">
+        <field name="name">view.dev.stock.picking.fill.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='operations']//field[@name='move_ids_without_package']" position="before">
+                <button name="action_dev_fill_qty" type='object' string='Fill Done Quantity' class="oe_highlight" style="float:right"/>
+            </xpath>
+        </field>
+    </record>
+        
+	
+        
+</odoo>
