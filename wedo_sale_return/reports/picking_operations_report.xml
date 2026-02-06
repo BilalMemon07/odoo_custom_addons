@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="stock_picking_report_inherit_for_sale_return"
+              inherit_id="stock.report_picking">
+        <xpath expr="//div[@name='div_sched_date']" position="after">
+            <t t-set="lang" t-value="o.user_id.lang"/>
+            <t t-if="lang != 'ar_001'">
+            <div class="col-auto" name="div_sale_person" t-if="o.is_sale_return">
+                <strong>Sale Person:</strong>
+                <p t-esc="o.sale_return_id.sales_person_n.name"/>
+            </div>
+                <div class="col-auto" name="div_sale_person" t-if="o.sale_id">
+                <strong>Sale Person:</strong>
+                <p t-esc="o.sale_id.user_id.name"/>
+            </div>
+            </t>
+
+            <t t-if="lang == 'ar_001'">
+            <div class="col-auto" name="div_sale_person" t-if="o.is_sale_return">
+                <strong>مندوب المبيعات:</strong>
+                <p t-esc="o.sale_return_id.sales_person_n.name"/>
+            </div>
+                <div class="col-auto" name="div_sale_person" t-if="o.sale_id">
+                <strong>مندوب المبيعات:</strong>
+                <p t-esc="o.sale_id.user_id.name"/>
+            </div>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

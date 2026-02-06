@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ideabox_salonplus_discount.GlobalDiscountPopup">
+        <Dialog title="props.title">
+            <!-- Discount Type Selection with Radio Inputs -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Discount Type</label>
+                <div class="d-flex gap-4">
+                    <div class="form-check">
+                        <input class="form-check-input" 
+                               type="radio" 
+                               name="discount_type" 
+                               id="discount_type_fixed" 
+                               value="fixed"
+                               t-att-checked="state.discount_type === 'fixed'"
+                               t-on-change="() => state.discount_type = 'fixed'"/>
+                        <label class="form-check-label" for="discount_type_fixed">
+                            Fixed Amount
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" 
+                               type="radio" 
+                               name="discount_type" 
+                               id="discount_type_percentage" 
+                               value="percentage"
+                               t-att-checked="state.discount_type === 'percentage'"
+                               t-on-change="() => state.discount_type = 'percentage'"/>
+                        <label class="form-check-label" for="discount_type_percentage">
+                            Percentage
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Input -->
+            <div class="mb-4">
+                <label class="form-label fw-bold">
+                    <t t-if="state.discount_type === 'fixed'">Discount Amount</t>
+                    <t t-if="state.discount_type === 'percentage'">Discount Percentage</t>
+                </label>
+                <div class="input-group input-group-lg">
+                    <input type="number" 
+                           t-model="state.discount_value" 
+                           class="form-control" 
+                           placeholder="Enter value"
+                           t-ref="discount_value"/>
+                    <span class="input-group-text">
+                        <t t-if="state.discount_type === 'fixed'">$</t>
+                        <t t-if="state.discount_type === 'percentage'">%</t>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <t t-set-slot="footer">
+                <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-secondary btn-lg o-default-button" t-on-click="close">Discard</button>
+                    <button class="btn btn-primary btn-lg o-default-button" t-on-click="confirm">Apply</button>
+                </div>
+            </t>
+        </Dialog>
+    </t>
+</templates>

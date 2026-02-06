@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Add Partial Payment Button to PaymentScreenButtons -->
+    <t t-name="pos_partial_payment_odoo.PaymentScreenButtons"
+       t-inherit="point_of_sale.PaymentScreenButtons"
+       t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('js_invoice')]" position="after">
+            <t t-if="pos.config.partial_payment">
+                <button class="button btn btn-light btn-lg d-flex justify-content-between align-items-baseline w-100 w-md-50 lh-lg"
+                        t-ref="PartialPaymentButton"
+                        t-on-click="PartialPaymentButton"
+                        t-att-class="{ 'highlight active text-action': currentOrder.partial_payment }">
+                    <span><i class="fa fa-credit-card me-2"/>Partial Payment</span>
+                    <i class="fa me-2" t-attf-class="{{ currentOrder.partial_payment ? 'fa-check-square text-action' : 'fa-square-o' }}" />
+                </button>
+            </t>
+        </xpath>
+    </t>
+
+    <!-- Modify PaymentScreenValidate to add reference -->
+    <t t-name="pos_partial_payment_odoo.PaymentScreenValidate"
+       t-inherit="point_of_sale.PaymentScreenValidate"
+       t-inherit-mode="extension">
+        <!-- Add reference to the validation container for small screens -->
+        <xpath expr="//button[hasclass('validation-button')]" position="attributes">
+            <attribute name="t-ref">PartialPayment</attribute>
+        </xpath>
+        <!-- Add reference to the validation container for larger screens -->
+        <xpath expr="//button[hasclass('validation')]" position="attributes">
+            <attribute name="t-ref">PartialPayment</attribute>
+        </xpath>
+    </t>
+</templates>

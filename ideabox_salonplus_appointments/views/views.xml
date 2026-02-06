@@ -1,0 +1,124 @@
+<odoo>
+    <data>
+
+        <record id="view_appointment_from" model="ir.ui.view">
+            <field name="name">appointment.form</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Appointment">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"  invisible="state != 'draft'"/>
+                        <button name="action_done" string="Done" type="object" class="btn-success"   invisible="state != 'confirmed'" />
+                        <button name="action_cancel" string="Cancel" type="object" class="btn-danger"  invisible="state in ['done','cancelled']"/>
+                        <button name="action_draft" string="Set to Draft" type="object" class="btn-secondary"  invisible="state != 'cancelled'"/>
+                        <field name="state" widget='statusbar' statusbar_visible='draft,confirmed,done,cancelled' statusbar_colors='{"draft":"blue","confirmed":"orange","done":"green","cancelled":"red"}' class="oe_inline"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="partner_id" readonly="state != 'draft'"/>
+                                <field name="date_from" readonly="state != 'draft'"/>
+                            </group>
+                            <group>
+                                <field name="appointment_type_id" readonly="state != 'draft'"/>
+                                <field name="date_to" readonly="state != 'draft'"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Services">
+                                <field name="resource_line_ids" nolabel="1" editable="bottom"  >
+                                    <list editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="resource_id"/>
+                                        <field name="date_from"/>
+                                        <field name="date_to"/>
+                                        <field name="duration"/>
+                                    </list>
+                                </field>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+        <record id="view_appointment_tree" model="ir.ui.view">
+            <field name="name">appointment.tree</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <list string="Appointments">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="appointment_type_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state"/>
+                </list>
+            </field>
+
+        </record>
+
+        <record id="view_appointment_calendar" model="ir.ui.view">
+            <field name="name">appointment.calendar</field>
+            <field name="model">appointment.appointment</field>
+            <field name="arch" type="xml">
+                <calendar string="Appointments" date_start="date_from" date_stop="date_to" color="partner_id">
+                    <field name="name"/>
+                    <field name="partner_id" filters="1"/>
+                    <field name="appointment_type_id"/>
+                    <field name="state"/>
+                </calendar>
+            </field>
+
+        </record>
+        <record id="view_resource_services_calendar" model="ir.ui.view">
+            <field name="name">Resource And Services Calendar</field>
+            <field name="model">resource.and.service</field>
+            <field name="arch" type="xml">
+                <calendar string="Appointments" date_start="date_from" date_stop="date_to" color="resource_id">
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="resource_id" filters="1"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_appointment" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">appointment.appointment</field>
+            <field name="view_mode">calendar,list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new appointment.
+                </p>
+            </field>
+        </record>
+        
+        <record id="action_resource_service" model="ir.actions.act_window">
+            <field name="name">Resource And Service</field>
+            <field name="res_model">resource.and.service</field>
+            <field name="view_mode">calendar</field>
+
+        </record>
+
+        <record id="appointment.appointment_type_menu" model="ir.ui.menu">
+            <field name="name">Appointment Type</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="appointment.main_menu_appointments" model="ir.ui.menu">
+            <field name="action" ref="action_appointment"/>
+        </record>
+        <record id="appointment.calendar_event_action_view_bookings_resources" model="ir.actions.act_window">
+            <field name="domain">[('appointment_id', '!=', False)]</field>
+        </record>
+        <menuitem id="appointment.menu_appointments" name="Appointments" sequence="5" action="action_appointment" parent="appointment.main_menu_appointments"/>
+        <menuitem id="resource_services" name="Resource Occupation" sequence="5" action="action_resource_service" parent="appointment.menu_schedule_report"/>
+
+    </data>
+</odoo>

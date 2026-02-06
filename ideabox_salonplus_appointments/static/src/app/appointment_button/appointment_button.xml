@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Muhammad Bilal -->
+<templates id="template" xml:space="preserve">
+    <t t-name="ideabox_salonplus_appointments.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='props.showRemainingButtons']/div/OrderlineNoteButton" position="after">
+            <button t-att-class="buttonClass" t-on-click="() => this.onClickAppointment()">
+                <i class="fa fa-link me-1" role="img" aria-label="Set Appointment" title="Set Appointment" /> Appointment
+            </button>
+        </xpath>
+    </t>
+</templates>

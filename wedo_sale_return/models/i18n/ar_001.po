@@ -1,0 +1,963 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wedo_sale_return
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-27 15:41+0000\n"
+"PO-Revision-Date: 2024-01-27 15:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wedo_sale_return
+#: model:ir.actions.report,print_report_name:wedo_sale_return.action_report_sale_return_order
+msgid "'Sale Return %s'% (object.name)"
+msgstr "مرتجع مبيعات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__default_location_dest_id_usage
+msgid ""
+"* Vendor Location: Virtual location representing the source location for products coming from your vendors\n"
+"* View: Virtual location used to create a hierarchical structures for your warehouse, aggregating its child locations ; can't directly contain products\n"
+"* Internal Location: Physical locations inside your own warehouses,\n"
+"* Customer Location: Virtual location representing the destination location for products sent to your customers\n"
+"* Inventory Loss: Virtual location serving as counterpart for inventory operations used to correct stock levels (Physical inventories)\n"
+"* Production: Virtual counterpart location for production operations: this location consumes the components and produces finished products\n"
+"* Transit Location: Counterpart location that should be used in inter-company or inter-warehouses operations"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "<span class=\"o_form_label\"> Order Name </span>"
+msgstr "اسم الطلب"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_reason_form
+msgid "<span class=\"o_form_label\"> Reason </span>"
+msgstr "السبب"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<span style=\"text-align:left;\">Customer: </span>"
+msgstr "العميل"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<span>Disc.%</span>"
+msgstr "الخصم"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid ""
+"<strong> Note : <br/>\n"
+"Price Unable To Change<br/></strong>"
+msgstr "السعر لا يمكن تغييره"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Amount</strong>"
+msgstr "المبلغ"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Barcode</strong>"
+msgstr "باركود"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Customer:</strong>"
+msgstr "العميل"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Delivery To :</strong>"
+msgstr "ارسال الى"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Description</strong>"
+msgstr "الوصف"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>LN</strong>"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Order Date:</strong>"
+msgstr "تاريخ الطلب"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Return Qty</strong>"
+msgstr "كمية المرتجع"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Sale Representative:</strong>"
+msgstr "مندوب المبيعات"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Subtotal</strong>"
+msgstr "الاجمالي"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Tax</strong>"
+msgstr "الضريبة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Total</strong>"
+msgstr "المجموع"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "<strong>Unit Price</strong>"
+msgstr "سعر الوحده"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_needaction
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب اجراء"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_ids
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_ids
+msgid "Activities"
+msgstr "النشاطات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_exception_decoration
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "النشاطات المتوقعة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_state
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_type_icon
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "نوع النشاط"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Add a note"
+msgstr "اضافة ملاحظة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Add a product"
+msgstr "اضافة منتج"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Add a section"
+msgstr "اضافة قسم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__amount_untax
+msgid "Amount Un Tax"
+msgstr "المبلغ بدون ضريبة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_attachment_count
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "Barcode"
+msgstr "باركود"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__account_move__state__cancel
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__company_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return__state__confirm
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: wedo_sale_return
+#: model_terms:ir.actions.act_window,help:wedo_sale_return.sale_return_reason_action
+msgid "Create a return Reason"
+msgstr "انشاء سبب ارجاع"
+
+#. module: wedo_sale_return
+#: model_terms:ir.actions.act_window,help:wedo_sale_return.sale_return_action
+msgid "Create a request for return"
+msgstr "انشاء طلب ارجاع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__create_uid
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__create_uid
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__create_uid
+msgid "Created by"
+msgstr "انشأت بواسطة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__create_date
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__create_date
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__create_date
+msgid "Created on"
+msgstr "انشأت بواسطة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__currency_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__partner_id
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__default_location_dest_id_usage
+msgid "Destination Location Type"
+msgstr "نوع موقع الوجهة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Disc.%"
+msgstr "الخصم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__discount
+msgid "Discount (%)"
+msgstr "الخصم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__display_name
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__display_name
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__display_type
+msgid "Display Type"
+msgstr "نوع العرض"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return__state__done
+msgid "Done"
+msgstr "منتهي"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__account_move__state__draft
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_no_variant_attribute_value_ids
+msgid "Extra Values"
+msgstr "القيم الإضافية"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_follower_ids
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_partner_ids
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "العملاء المتابعين"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__activity_type_icon
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع على سبيل المثال. مهام كرة القدم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__sale
+msgid "From Sale Order"
+msgstr "من طلب البيع"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_search
+msgid "Group By"
+msgstr "تجميع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__has_message
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__show_update_pricelist
+msgid "Has Pricelist Changed"
+msgstr "قائمة الاسعار قد تغيرت"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__id
+msgid "ID"
+msgstr "الهوية"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_exception_icon
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_exception_icon
+msgid "Icon"
+msgstr "العنصر"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__activity_exception_icon
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط الاستثناء"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__message_needaction
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها، فإن الرسائل الجديدة تتطلب انتباهك"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__message_has_error
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__message_has_sms_error
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__message_has_error
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل تحتوي على خطأ في التسليم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__pricelist_id
+msgid "If you change the pricelist, only newly added lines will be affected."
+msgstr "إذا قمت بتغيير قائمة الأسعار، فلن تتأثر سوى الخطوط المضافة حديثًا"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__invoice_ids
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__invoiced_qty
+msgid "Invoiced Qty"
+msgstr "الكمية المفوترة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__invoice_count
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_is_follower
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_is_follower
+msgid "Is Follower"
+msgstr "المتابعين"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return____last_update
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line____last_update
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason____last_update
+msgid "Last Modified on"
+msgstr "اخر تعديل"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__write_uid
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__write_uid
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__write_date
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__write_date
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Lines"
+msgstr "البنود"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_main_attachment_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_has_error
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في ايصال الرسالة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_ids
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_ids
+msgid "Messages"
+msgstr "الرسالة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__my_activity_date_deadline
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشاطات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Name, TIN, Email, or Reference"
+msgstr "اسم العميل"
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_calendar_event_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الموعد التقويمي للنشاط التالي"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_date_deadline
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي النشاط التالي"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_summary
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص نوع النشاط"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_type_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "No line to return picking"
+msgstr ""
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "No lines"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return_line__display_type__line_note
+msgid "Note"
+msgstr "مذكرة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_needaction_counter
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_has_error_counter
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__message_needaction_counter
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__message_has_error_counter
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__date_order
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__date_order
+msgid "Order Date"
+msgstr "تاريخ الطلب"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_packaging_id
+msgid "Packaging"
+msgstr "التعبئة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_packaging_qty
+msgid "Packaging Quantity"
+msgstr "كمية التعبئة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__partner_id
+msgid "Partner"
+msgstr "العميل"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_bank_statement_line__picking_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_move__picking_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_payment__picking_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__picking_count
+msgid "Picking"
+msgstr "استلام"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__account_move__state__posted
+msgid "Posted"
+msgstr "تم الترحيل "
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__pricelist_id
+msgid "Pricelist"
+msgstr "قائمة الاسعار"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__pricelist_item_id
+msgid "Pricelist Item"
+msgstr "قائمة اسعار المنتج"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "Printed on"
+msgstr "طبعت في"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Process"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "Product prices have been recomputed according to pricelist <b>%s<b> "
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_uom_qty
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__reason_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__name
+msgid "Reason"
+msgstr "سبب الارجاع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__location_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__picking_type_id
+msgid "Receive To"
+msgstr "الاستلام الى"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Receive To Location"
+msgstr "الاستلام الى موقع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__received_qty
+msgid "Received Qty"
+msgstr "الكمية المستلمة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Recompute all prices based on this pricelist"
+msgstr "إعادة حساب جميع الأسعار على أساس قائمة الأسعار"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Reconcile"
+msgstr "تسوية"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__reference
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Reset Draft"
+msgstr "اعادة الى مسوده"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__activity_user_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_bank_statement_line__sale_return_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_move__sale_return_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_payment__sale_return_id
+msgid "Return"
+msgstr "ارجاع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__return_journal_id
+msgid "Return Journal"
+msgstr "قيد المرتجع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__order_line_ids
+msgid "Return Lines"
+msgstr "خط الارجاع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__order_id
+msgid "Return Order"
+msgstr "مرتجع المبيعات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__picking_ids
+msgid "Return Picking"
+msgstr "استلام المرتجع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__qty_return
+msgid "Return Qty"
+msgstr "الكمية المرتجعه"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__message_has_sms_error
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ ارسال SMS"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_search
+msgid "Sale"
+msgstr "البيع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__sale_order_id
+msgid "Sale Order"
+msgstr "طلب البيع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__sale_order_id
+msgid "Sale Order line"
+msgstr "خط مرتجع المبيعات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_qty
+msgid "Sale Quantity"
+msgstr "الكمية المباعة"
+
+#. module: wedo_sale_return
+#: model:ir.actions.act_window,name:wedo_sale_return.sale_return_action
+#: model:ir.actions.report,name:wedo_sale_return.action_report_sale_return_order
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_move_line__sale_return_line_id
+#: model:ir.model.fields,field_description:wedo_sale_return.field_stock_picking__is_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_stock_picking__sale_return_id
+#: model:ir.module.category,name:wedo_sale_return.sale_return_category
+#: model:ir.ui.menu,name:wedo_sale_return.menu_return_sale_root
+#: model:ir.ui.menu,name:wedo_sale_return.menu_sale_form_action
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_view_graph
+msgid "Sale Return"
+msgstr "مرتجع المبيعات"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "Sale Return  #"
+msgstr "مرتجع المبيعات"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_search
+msgid "Sale Return Filter"
+msgstr "فلتر مرتجع المبيعات"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_stock_move__sale_return_line_id
+msgid "Sale Return Line"
+msgstr "خط ارجاع البيع"
+
+#. module: wedo_sale_return
+#: model:res.groups,name:wedo_sale_return.group_sale_return_manager
+msgid "Sale Return Manager"
+msgstr "مرتجع المبيعات (المدير)"
+
+#. module: wedo_sale_return
+#: model:ir.actions.act_window,name:wedo_sale_return.sale_return_reason_action
+#: model:ir.ui.menu,name:wedo_sale_return.menu_sale_reason_form_action
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_reason_form
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_reason_search
+msgid "Sale Return Reason"
+msgstr "سبب الارجاع"
+
+#. module: wedo_sale_return
+#: model:res.groups,name:wedo_sale_return.group_sale_return_user
+msgid "Sale Return User"
+msgstr "مرتجع المبيعات (المستخدم)"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields.selection,name:wedo_sale_return.selection__sale_return_line__display_type__line_section
+msgid "Section"
+msgstr "القسم"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__sequence
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__state
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__state
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_bank_statement_line__state
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_move__state
+#: model:ir.model.fields,field_description:wedo_sale_return.field_account_payment__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__activity_state
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "العمليات المستقبلية"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_stock_move
+msgid "Stock Move"
+msgstr "حركة الصنف"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__price_subtotal
+msgid "Subtotal"
+msgstr "الاجمالي"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__amount_tax
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__price_tax
+msgid "Tax"
+msgstr "الضريبة"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__tax_id
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__show_update_pricelist
+msgid ""
+"Technical Field, True if the pricelist was changed;\n"
+" this will then display a recomputation button"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_line__display_type
+msgid "Technical field for UX purpose."
+msgstr "المجال الفني لغرض تجربة المستخدم"
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "The product must be Costed"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.constraint,message:wedo_sale_return.constraint_sale_return_reason_name_uniq
+msgid "This Reason already exists !"
+msgstr "هذا السبب موجود بالفعل"
+
+#. module: wedo_sale_return
+#: model:ir.model.constraint,message:wedo_sale_return.constraint_sale_return_reference_uniq
+msgid "This Reference already exists !"
+msgstr "هذا المرجع موجود بالفعل"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "This will update all unit prices based on the currently set pricelist."
+msgstr ""
+"سيؤدي هذا إلى تحديث جميع أسعار الوحدات بناءً على قائمة الأسعار المحددة "
+"حاليًا"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__total
+msgid "Total"
+msgstr "المجموع"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_stock_picking
+msgid "Transfer"
+msgstr "الاستلام المخزني"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__activity_exception_decoration
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__price_unit
+msgid "Unit Price"
+msgstr "السعر"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_line__product_uom
+msgid "Unit of Measure"
+msgstr "الوحدة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.sale_return_form
+msgid "Update Prices"
+msgstr "تحديث الاسعار"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__warehouse_view_location_id
+msgid "Warehouse View Location"
+msgstr "اظهار موقع المستودع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return__website_message_ids
+#: model:ir.model.fields,field_description:wedo_sale_return.field_sale_return_reason__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: wedo_sale_return
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return__website_message_ids
+#: model:ir.model.fields,help:wedo_sale_return.field_sale_return_reason__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "You can not cancel processed request"
+msgstr ""
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "You can not delete confirmed Requests"
+msgstr ""
+
+#. module: wedo_sale_return
+#. odoo-python
+#: code:addons/wedo_sale_return/models/sale_return.py:0
+#, python-format
+msgid "You can not reset processed request"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "_________________<br/> Approved by"
+msgstr "تم الموافقة بواسطة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "_________________<br/> Created by"
+msgstr "انشأت بواسطة"
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "_________________<br/> Customer sign"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_account_move
+msgid "account.move"
+msgstr ""
+
+#. module: wedo_sale_return
+#: model_terms:ir.ui.view,arch_db:wedo_sale_return.report_sale_return_order_document
+msgid "by"
+msgstr "بواسطة"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_sale_return
+msgid "sale return management"
+msgstr "مرتجع مبيعات"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_sale_return_reason
+msgid "sale return reason"
+msgstr "سبب الارجاع"
+
+#. module: wedo_sale_return
+#: model:ir.model,name:wedo_sale_return.model_sale_return_line
+msgid "sale.return.line"
+msgstr "مرتجع مبيعات"

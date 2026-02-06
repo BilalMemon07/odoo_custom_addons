@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <!-- <record id='pos_order_label_view_pos_pos_form' model='ir.ui.view'>
+          <field name='name'>pos.order.label.form.inherit</field>
+          <field name='model'>pos.order</field>
+          <field name='inherit_id' ref='point_of_sale.view_pos_pos_form' />
+          <field name='arch' type='xml'>
+               <xpath expr="//field[@name='discount']" position='attributes'>
+                    <attribute name="invisible">add_section</attribute>
+               </xpath>
+          </field>
+     </record> -->
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos_order_list</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="pos_inventory_section" position="after">
+                <block title="Retail Configurations">
+                    <!-- pos discount -->
+                    <div style="font-size: 15px; font-weight: 600;"> POS Discount </div>
+                    
+                    <setting>
+                        <field name="pos_allow_order_line_discount" />
+                    </setting>
+                    <setting>
+                        <field name="pos_allow_global_discount" />
+                    </setting>
+                    <!-- Product Suggestion -->
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

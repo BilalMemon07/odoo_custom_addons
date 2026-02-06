@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- Calendar view for resource availability -->
+       <record id="view_resource_calendar_attendance_calendar" model="ir.ui.view">
+            <field name="name">resource.calendar.attendance.calendar</field>
+            <field name="model">resource.calendar.attendance</field>
+            <field name="arch" type="xml">
+                <calendar string="Resource Availability"
+                        date_start="date_start" 
+                        date_stop="date_stop"
+                        color="employee_id"
+                        mode="week"
+                        create="0">
+                    <field name="name"/>
+                    <field name="employee_id" filters="1" />
+                    <field name="calendar_id"/>
+                    <field name="dayofweek"/>
+                    <field name="hour_from"/>
+                    <field name="hour_to"/>
+                    <field name="day_period"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <!-- Action to open the calendar view -->
+        <record id="action_resource_calendar_attendance_calendar" model="ir.actions.act_window">
+            <field name="name">Resource Availability Calendar</field>
+            <field name="res_model">resource.calendar.attendance</field>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="view_resource_calendar_attendance_calendar"/>
+        </record>
+
+        <!-- Add to menu -->
+        <menuitem id="menu_resource_calendar_attendance_calendar" 
+                  name="Resource Availability" 
+                  action="action_resource_calendar_attendance_calendar"
+                  parent="hr.menu_hr_employee_payroll"
+                  sequence="10"/>
+
+
+        <record id="resource_calendar_form_inherit" model="ir.ui.view">
+            <field name="name">resource.calendar.form.inherit</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="resource.resource_calendar_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='attendance_ids']" position="inside">
+                    <list string="Working Time" editable="bottom" default_order="sequence, week_type, dayofweek, hour_from">
+                    <field name="sequence" widget="handle"/>
+                    <field name="display_type" column_invisible="True"/>
+                    <field name="display_name" width="1" string=" " invisible="display_type != 'line_section'"/>
+                    <field name="name" invisible="display_type == 'line_section'"/>
+                    <field name="employee_id" optional="show"/>
+                    <field name="dayofweek"/>
+                    <field name="day_period"/>
+                    <field name="hour_from" widget="float_time"/>
+                    <field name="hour_to" widget="float_time"/>
+                    <field name="duration_days" optional="show"/>
+                    <field name="date_from" optional="hide"/>
+                    <field name="date_to" optional="hide"/>
+                    <field name="week_type" readonly="1" force_save="1" optional="hide"/>
+                    </list>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

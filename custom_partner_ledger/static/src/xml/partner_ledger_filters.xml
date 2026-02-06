@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <templates xml:space="preserve">
+    <t t-name="custom_partner_ledger.AccountFilterAccount"
+       t-inherit="account_reports.PartnerLedgerFilters">
+        <xpath expr="//div[@id='filter_date']" position="after">
+            <div class="col-12 col-md-6 mb-2">
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                    <label class="d-flex align-items-center mb-0" t-esc="controller.options.payment_date.string"/>
+                    <div class="d-flex flex-row gap-2">
+                        <DateTimeInput
+                            type="'date'"
+                            value="paymentDateFrom()"
+                            onChange="(dateFrom) => this.setPaymentDateFrom(dateFrom)"
+                            placeholder="From"
+                        />
+                        <span>to</span>
+                        <DateTimeInput
+                            type="'date'"
+                            value="paymentDateTo()"
+                            onChange="(dateTo) => this.setPaymentDateTo(dateTo)"
+                            placeholder="To"
+                        />
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates> -->
+
+<templates xml:space="preserve">
+    <t t-name="custom_partner_ledger.AccountFilterAccount"
+       t-inherit="account_reports.PartnerLedgerFilters">
+        <xpath expr="//div[@id='filter_date']" position="after">
+            <div class="col-12 col-md-6 mb-2">
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                    <label class="d-flex align-items-center mb-0" t-esc="controller.options.payment_date.string"/>
+                    <div class="d-flex flex-row gap-2">
+                        <DateTimeInput
+                            type="'date'"
+                            value="paymentDateFrom()"
+                            onChange="(dateFrom) => dateFrom ? this.setPaymentDateFrom(dateFrom) : this.setPaymentDateFrom(null)"
+                            placeholder="From"
+                        />
+                        <span>to</span>
+                        <DateTimeInput
+                            type="'date'"
+                            value="paymentDateTo()"
+                            onChange="(dateTo) => dateTo ? this.setPaymentDateTo(dateTo) : this.setPaymentDateTo(null)"
+                            placeholder="To"
+                        />
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>
